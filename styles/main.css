@@ -22,7 +22,8 @@ html {
 
  .navbar .logo {
      position: relative; /* positioning will be explained in a resource */
-     left: 2rem;
+     left: 7rem;
+     margin-top: 12px;
  }
 
  .container {
