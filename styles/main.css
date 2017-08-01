@@ -30,15 +30,6 @@ html {
      max-width: 64rem;
  }
 
- .clearfix::before,
- .clearfix::after {
-    content: " ";
-    display: table;
- }
-
- .clearfix::after {
-    clear: both;
- }
 
    /* Medium screens (640px) */
 @media (min-width: 640px) {
@@ -61,4 +52,14 @@ html {
   /* Large screens (1024px) */
 @media (min-width: 1024px) {
     html { font-size: 120%; }
+}
+
+.clearfix::before,
+.clearfix::after {
+   content: " ";
+   display: table;
+}
+
+.clearfix::after {
+   clear: both;
 }
