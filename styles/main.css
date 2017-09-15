@@ -38,6 +38,7 @@ html {
      right: 0;
      height: 100px;
      color: white;
+     margin-top: 4px;
  }
 
  .links-container .navbar-link {
