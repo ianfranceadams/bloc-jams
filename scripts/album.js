@@ -30,6 +30,24 @@
      ]
  };
 
+var albumZeppelin = {
+     title: 'Houses of the Holy',
+     artist: 'Led Zeppelin',
+     label: 'Atlantic',
+     year: '1973',
+     albumArtUrl: 'assets/images/album_covers/22.png',
+     songs: [
+         { title: 'The Song Remains the Same', duration: '5:32' },
+         { title: 'The Rain Song', duration: '7:39' },
+         { title: 'Over the Hills and Far Away', duration: '4:50'},
+         { title: 'The Crunge', duration: '3:17' },
+         { title: 'Dancing Days', duration: '3:43'},
+         { title: 'D\'yer Mak\'er', duration: '4:23'},
+         { title: 'No Quarter', duration: '7:00'},
+         { title: 'The Ocean', duration: '4:31'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -41,6 +59,13 @@ var createSongRow = function(songNumber, songName, songLength) {
  
      return template;
  };
+
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+ 
 
 var setCurrentAlbum = function(album) {
      // #1
@@ -66,5 +91,19 @@ var setCurrentAlbum = function(album) {
  };
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
- };
+    setCurrentAlbum(albumPicasso);
+    
+    var albums = [albumPicasso, albumMarconi, albumZeppelin];
+    var index = 1;
+    albumImage.addEventListener('click', function() {
+                        
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+         
+     });
+        
+};
+     
