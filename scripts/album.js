@@ -119,7 +119,15 @@ var setCurrentAlbum = function(album) {
 };
 
 var updateSeekBarWhileSongPlays = function() {
-     if (currentSoundFile) {
+    
+    var setCurrentTimeInPlayerBar = function(currentTime) {
+         currentTime = buzz.toTimer(currentSoundFile.getTime());
+         var $songTime = $('.current-time');
+         $songTime.text(currentTime);
+    
+      };
+        
+    if (currentSoundFile) {
          // #10
          currentSoundFile.bind('timeupdate', function(event) {
              // #11
@@ -127,6 +135,7 @@ var updateSeekBarWhileSongPlays = function() {
              var $seekBar = $('.seek-control .seek-bar');
  
              updateSeekPercentage($seekBar, seekBarFillRatio);
+             setCurrentTimeInPlayerBar();
          });
      }
 };
@@ -192,10 +201,21 @@ var trackIndex = function(album, song) {
 };
 
 var updatePlayerBarSong = function() {
+    
+    var setTotalTimeInPlayerBar = function(totalTime) {
+        totalTime = albumPicasso.song.duration;
+        var $songLength = $('.total-time');
+        $songLength.text(totalTime);
+        
+   };
+    
+    
     $('.currently-playing .song-name').text(currentSongFromAlbum.title);
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     $('.currently-playing .artist-song-mobile').text(currentSongFromAlbum.title + " - " + currentAlbum.artist);
     $('.main-controls .play-pause').html(playerBarPauseButton);
+    
+    setTotalTimeInPlayerBar();
 };
 
 var nextSong = function() {
