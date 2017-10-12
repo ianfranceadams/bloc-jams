@@ -76,6 +76,17 @@ html {
      max-width: 56rem;
  }
 
+
+@media (min-width: 320px) and (max-width: 640px) {
+     .navbar .logo {
+         left: 1rem;
+     }
+    
+    .links-container .navbar-link {
+        padding-right: 1.5rem;
+     }
+ }    
+
    /* Medium screens (640px) */
 @media (min-width: 640px) {
     html { font-size: 112%; }

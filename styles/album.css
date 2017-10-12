@@ -10,24 +10,27 @@ body.album {
  .album-cover-art {
      position: relative;
      left: 20%;
-     margin-top: 1rem;
+     margin-top: 2.5rem;
      width: 60%;
  }
 
  .album-view-details {
      position: relative;
-     top: 1.5rem;
-     padding: 1rem;
+     top: 2.5rem;
+     padding: 0rem;
+     margin-left: -2rem;
+     
  }
 
  .album-view-details .album-view-title {
-     font-weight: 300;
-     font-size: 2rem;
+     font-weight: 600;
+     font-size: 4rem;
  }
 
  .album-view-details .album-view-artist {
      font-weight: 300;
      font-size: 1.5rem;
+     margin-top: -2rem;
  }
 
  .album-view-details .album-view-release-info {
@@ -91,10 +94,11 @@ body.album {
  @media (max-width: 640px) and (min-width: 320px) {
      .album-view-details {
          text-align: center;
+         margin-left: 0rem;
      }
 
      .album-view-title {
-         margin-top: 0;
+         margin-top: -1rem;
      }
  }
 
@@ -107,3 +111,11 @@ body.album {
          margin: auto;
      }
  }
+
+@media (max-width: 450px) {
+    
+    .album-view-details .album-view-title {
+        font-size: 3rem;
+    }
+}
+    
